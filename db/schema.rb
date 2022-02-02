@@ -13,18 +13,19 @@
 ActiveRecord::Schema.define(version: 2022_02_02_155836) do
 
   create_table "pokemons", force: :cascade do |t|
+    t.integer "number"
     t.string "name"
     t.string "type1"
     t.string "type2"
-    t.string "total"
-    t.string "hp"
-    t.string "attack"
-    t.string "defense"
-    t.string "spAtk"
-    t.string "spDef"
-    t.string "speed"
-    t.string "generation"
-    t.string "legendary"
+    t.integer "total"
+    t.integer "hp"
+    t.integer "attack"
+    t.integer "defense"
+    t.integer "spAtk"
+    t.integer "spDef"
+    t.integer "speed"
+    t.integer "generation"
+    t.boolean "legendary"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
