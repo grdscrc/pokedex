@@ -12,4 +12,14 @@ class PokemonController < ApplicationController
         params.permit!
         pkmn.update!(params[:pokemon])
     end
+
+    def new
+        @pokemon = Pokemon.new
+        render :edit
+    end
+
+    def create
+        params.permit!
+        Pokemon.create!(params[:pokemon])
+    end
 end
