@@ -22,4 +22,8 @@ class PokemonController < ApplicationController
         params.permit!
         Pokemon.create!(params[:pokemon])
     end
+
+    def destroy
+        Pokemon.find(params[:id]).destroy
+    end
 end

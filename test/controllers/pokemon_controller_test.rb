@@ -45,4 +45,10 @@ class PokemonControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_equal 'Gardevoir', Pokemon.find_by_number(282).name
   end
+
+  test "should delete pokemon" do
+    delete pokemon_url(Pokemon.find_by_number(150))
+    assert_response :success
+    assert_nil Pokemon.find_by_number(150)
+  end
 end
