@@ -19,7 +19,7 @@ csv.each do |row|
   p.generation = row['Generation']
   p.legendary = row['Legendary'] != 'False'
   p.save
-  puts "#{p.number}, #{p.name} saved"
+  puts "#{p.number}, #{p.name} saved" if p.legendary
 end
 
 puts "There are now #{Pokemon.count} rows in the pokemon table"
