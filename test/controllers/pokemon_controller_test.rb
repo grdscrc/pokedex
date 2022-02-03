@@ -4,7 +4,7 @@ class PokemonControllerTest < ActionDispatch::IntegrationTest
   test "should get index" do
     get root_url, as: :json
     assert_response :success
-    assert_equal %w(Mewtwo Pikachu), response.parsed_body.map{_1['name']}.sort
+    assert_equal %w(Mewtwo Pikachu), response.parsed_body['pokemons'].map{_1['name']}.sort
   end
 
   test "should get show" do
