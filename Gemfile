@@ -69,8 +69,6 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
-  gem 'rails-controller-testing'
 end
 
 gem 'will_paginate', '~> 3.3.0'
-gem 'sass-rails'
