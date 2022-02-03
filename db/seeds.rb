@@ -1,7 +1,7 @@
 require 'csv'
 
 csv_text = File.read(Rails.root.join('lib', 'seeds', 'pokemon.csv'))
-csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
+csv = CSV.parse(csv_text, headers: true, encoding: 'ISO-8859-1')
 
 csv.each do |row|
   p = Pokemon.new
@@ -17,7 +17,7 @@ csv.each do |row|
   p.spDef = row['Sp. Def']
   p.speed = row['Speed']
   p.generation = row['Generation']
-  p.legendary = row['Legendary']
+  p.legendary = row['Legendary'] != 'False'
   p.save
   puts "#{p.number}, #{p.name} saved"
 end
