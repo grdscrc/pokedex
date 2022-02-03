@@ -14,8 +14,6 @@ class PokemonController < ApplicationController
     end
 
     def new
-        @pokemon = Pokemon.new
-        render :edit
     end
 
     def create
